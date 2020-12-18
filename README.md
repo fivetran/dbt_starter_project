@@ -11,7 +11,9 @@ This package models [connector name] data from [Fivetran's connector](https://fi
 - [ #3]
 ...
 
-> The [Connector] dbt package is compatible with BigQuery, Redshift, and Snowflake.
+## Compatibility (if needed)
+> Please be aware the [dbt_connector](https://github.com/fivetran/dbt_connector) and [dbt_connector_source](https://github.com/fivetran/dbt_connector_source) packages will only work with the [Fivetran connector schema](https://fivetran.com/docs/applications/connector/changelog) released after [some date]. If your Jira connector was set up prior to [some date], you will need to fully resync or set up a new [connector name] connector in order for the Fivetran dbt [connector] packages to work.
+
 
 ## Models - transformation package version
 
@@ -67,13 +69,13 @@ vars:
 ```
 
 ## Contributions
-Additional contributions to this package are very welcome! Please create issues
-or open PRs against `master`. Check out 
-[this post](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) 
-on the best workflow for contributing to a package.
+Don't see a model or specific metric you would have liked to be included? Notice any bugs when installing 
+and running the package? If so, we highly encourage and welcome contributions to this package! 
+Please create issues or open PRs against `master`. Check out [this post](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) on the best workflow for contributing to a package.
 
-## Database support
+## Database Support
 This package has been tested on BigQuery, Snowflake and Redshift.
+Coming soon -- compatibility with Spark
 
 ## Resources:
 - Provide [feedback](https://www.surveymonkey.com/r/DQ7K7WW) on our existing dbt packages or what you'd like to see next
