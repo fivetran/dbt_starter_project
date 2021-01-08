@@ -198,10 +198,6 @@ sources:
           - name: text
             description: Title of the stage.
 
-      # - name: contact - todo, contact does not exist in our data
-      #   description: Table of the contacts for all candidates.
-        # columns:
-        #   - name: 
       - name: opportunity_source
         description: Table relating opportunities to all of their individual sources. 
         columns:
@@ -219,7 +215,159 @@ sources:
             description: Text of the tag associated with this opportunity.
 
       - name: application
-      - name: posting_form
+        description: Table capturing candidate applications to job postings. 
+        columns:
+          - name: id
+            description: Unique ID of the application.
+          - name: archived_at
+            description: Timestamp of when the application was last archived.
+          - name: archived_reason_id
+            description: Foreign key referencing the id of the ARCHIVE_REASON for which the application was last archived.
+          - name: candidate_id
+            description: This field is deprecated - use `opportunity_id` instead!
+          - name: comments
+            description: Any additional comments from the candidate included in the job application.
+          - name: company
+            description: The candidate's current company or organization.
+          - name: created_at
+            description: Timestamp of when the application was created.
+          - name: posting_hiring_manager_id
+            description: >
+              Foreign key referencing the id of the USER who is the job posting's hiring manager, at the time 
+              the application was submitted.
+          - name: posting_id
+            description: Foreign key referencing the job POSTING for which the candidate applied.
+          - name: posting_owner_id
+            description: >
+              Foreign key referencing the id of the USER who owns this posting at the time the candidate applied.
+          - name: referrer_id
+            description: The user ID of the candidate's referrer. 
+          - name: requisition_for_hire_id
+            description: >
+              If the application was archived as hired against a requisition, a foreign key referencing the id of the
+              REQUISITION against which the application was hired.
+          - name: type
+            description: >
+              Type of the application. An application can be of type referral, user, or posting. Applications of type 
+              referral are created when a user refers a candidate for a job posting. Applications have type user when they 
+              are applied manually to a posting in Lever. Applications have type posting when a candidate applies to a job 
+              posting through your company's jobs page.
+          - name: opportunity_id
+            description: Foreign key referencing the id of the OPPORTUNITY associated with this application.
+
       - name: offer
+        description: Table of the data sent to an opportunity for a position they have been offerred.
+        columns:
+          - name: id
+            description: Unique ID of the offer.
+          - name: candidate_id # or opportunity_id - todo
+            description: Unique ID of the candidate or opportunity??
+          - name: created_at
+            description: Timestamp of when the offer was created.
+          - name: creator_id
+            description: Foreign key referencing the USER who created the offer.
+          - name: status
+            description: >
+              A string describing the current status of the offer. Can include: 
+              draft - the offer is still under construction
+              approval-sent - the offer needs approval
+              approved - the offer has been approved
+              sent - the offer has been sent through Lever
+              sent-manually - the offer has been sent to the candidate outside of Lever
+              opened - the candidate has opened the offer
+              denied - the candidate denied the offer
+              signed - the candidate signed the offer
+
       - name: archive_reason 
-         
+        description: >
+          Table of reasons for archiving candidates, exiting them from the hiring pipeline (after hiring or rejecting 
+          for a particular reason).
+        columns:
+          - name: id
+            description: Unique id of the archive reason.
+          - name: text
+            description: Name of the archive reason as shown in the Lever UI. 
+          - name: _fivetran_deleted
+            description: Boolean that is true if the archive reason has been soft-deleted.
+
+      - name: interview
+        description: Table capturing individual interviews (which comprise panels).
+        columns:
+          - name: id
+            description: Unique ID of the interview. 
+          - name: canceled_at
+            description: Timestamp of when the interview was canceled, if canceled.
+          - name: created_at
+            description: Timestamp of when the interview was created.
+          - name: creator_id
+            description: Foreign key referencing the USER who created the interview in lever.
+          - name: date
+            description: Date + time at which the interview was set to occur.
+          - name: duration
+            description: Interview duration in minutes, minimum value is 1.
+          - name: feedback_reminder
+            description: > 
+              Frequency of feedback reminders (i.e. once, daily, frequently, none).
+              Defaults to 'frequently' which is every 6 hours.
+          - name: gcal_event_url
+            description: Google calendar event url. 
+          - name: location
+            description: >
+              Interview location. Usually the name of a booked conference room but can also be a 
+              phone number to call.
+          - name: note
+            description: Interview note.
+          - name: panel_id
+            description: Unique id of the PANEL this interview belongs to.
+          - name: stage_id
+            description: >
+              Foreign key referencing the STAGE that the candidate was in at the time 
+              the interview was scheduled.
+          - name: subject
+            description: Subject of the interview. 
+          - name: timezone
+            description: Name of timezone in which interview was scheduled to occur.
+          - name: opportunity_id
+            description: Foreign key referencing the OPPORTUNITY being interviewed for. 
+
+      - name: panel 
+        description: >
+          Table capturing interview panels, which each contain a series of interviews that will take place for a 
+          given candidate during a stage in their opportunity journey.
+        columns:
+          - name: id 
+            description: Unique id of the panels. 
+          - name: canceled_at
+            description: Timestamp of when the panel was canceled.
+          - name: created_at
+            description: Timestamp of when the panel was created.
+          - name: creator_id
+            description: Foreign key referencing the USER that created the panel. 
+          - name: end
+            description: Timestamp of when the last interview in the panel ends. 
+          - name: external_url
+            description: URL that links to an external entity associated with this interview.
+          - name: externally_managed
+            description: Boolean tht is true if panels are created via the API, or via an integration.
+          - name: feedback_reminder
+            description: >
+              Frequency of feedback reminders (i.e. once, daily, frequently, none). Defaults to 'frequently',
+              which is every 6 hours
+          - name: note 
+            description: Note on the panel.
+          - name: stage_id
+            description: Foreign key referencing the STAGE that the candidate was in when the panel was scheduled. 
+          - name: start
+            description: Timestamp of when the first interview in the panel started. 
+          - name: timezone
+            description: Name of timezone in which panel was scheduled to occur.
+
+      - name: panel_interview
+      - name: panel_application
+      - name: interview_feedback
+      - name: feedback_form
+      - name: feedback_form_field
+      - name: requisition
+      - name: requisition_posting
+      - name: posting_form
+      - name: posting_form_field
