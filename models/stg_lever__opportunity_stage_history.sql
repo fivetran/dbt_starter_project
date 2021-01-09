@@ -28,7 +28,7 @@ final as (
         updated_at,
         updater_id as updater_user_id,
         _fivetran_synced
-        -- to_stage_index?
+
     from fields
 )
 

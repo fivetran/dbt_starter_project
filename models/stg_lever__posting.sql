@@ -29,7 +29,7 @@ final as (
         categories_location as job_location,
         categories_team as job_team,
 
-        content_description as post_description,
+        content_description,
 
         created_at,
         creator_id as creator_user_id,
