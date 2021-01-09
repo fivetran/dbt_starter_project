@@ -1,0 +1,4 @@
+id,_fivetran_synced,canceled_at,created_at,creator_id,end,external_url,externally_managed,feedback_reminder,note,stage_id,start,timezone
+59abd02f-928a-419a-8f49-41bdd5ca088c,2020-07-21 07:09:10.051 UTC,2019-10-29 22:43:18.401 UTC,2019-10-07 18:44:26.506 UTC,94d6efa3-c00b-49bf-878b-7c1beeee2d52,,,false,daily,,07d807e0-db2b-4400-9c51-cda7b3acb5ff,,America/Los_Angeles
+d2abd11a-db63-4fd2-aa6a-c60b27b4553d,2020-10-17 21:07:58.771 UTC,,2020-03-31 07:03:40.320 UTC,a408a960-6469-4082-a0e7-cdc0d8f3ad20,2020-04-07 06:30:00 UTC,,false,daily,,5a64a4f2-fe84-4129-9fde-64925fc82e7e,2020-04-07 05:30:00 UTC,Asia/Kolkata
+41fab7c5-630d-4601-85a1-856c24e63339,2020-07-21 13:44:52.887 UTC,,2020-01-10 23:37:15.184 UTC,f8083093-5a28-4089-b121-b459db40087d,2020-01-23 23:45:00 UTC,,false,daily,,07d807e0-db2b-4400-9c51-cda7b3acb5ff,2020-01-23 23:00:00 UTC,America/Los_Angeles
