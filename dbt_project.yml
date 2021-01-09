@@ -8,8 +8,29 @@ vars:
   lever_database: private-internal 
   lever_schema: lever_opp
 
-  # lever_source:
-  #   table_name: "{{ source('connector', 'table_name') }}" # all sources should be vars
+  lever_source:
+    application: "{{ source('lever', 'application') }}"
+    archive_reason: "{{ source('lever', 'archive_reason') }}"
+    feedback_form_field: "{{ source('lever', 'feedback_form_field') }}"
+    feedback_form: "{{ source('lever', 'feedback_form') }}"
+    interview_feedback: "{{ source('lever', 'interview_feedback') }}"
+    interview: "{{ source('lever', 'interview') }}"
+    interviewer_user: "{{ source('lever', 'interviewer_user') }}"
+    offer: "{{ source('lever', 'offer') }}"
+    opportunity_source: "{{ source('lever', 'opportunity_source') }}"
+    opportunity_stage_history: "{{ source('lever', 'opportunity_stage_history') }}"
+    opportunity_tag: "{{ source('lever', 'opportunity_tag') }}"
+    opportunity: "{{ source('lever', 'opportunity') }}"
+    panel_application: "{{ source('lever', 'panel_application') }}"
+    panel_interview: "{{ source('lever', 'panel_interview') }}"
+    panel: "{{ source('lever', 'panel') }}"
+    posting_interview: "{{ source('lever', 'posting_interview') }}"
+    posting_tag: "{{ source('lever', 'posting_tag') }}"
+    posting: "{{ source('lever', 'posting') }}"
+    requisition_posting: "{{ source('lever', 'requisition_posting') }}"
+    requisition: "{{ source('lever', 'requisition') }}"
+    stage: "{{ source('lever', 'stage') }}"
+    user: "{{ source('lever', 'user') }}"
 
 models: 
   materialized: table # for building the package, switch to views later? 

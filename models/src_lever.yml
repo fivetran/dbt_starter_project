@@ -170,7 +170,7 @@ sources:
           - name: username
             description: Username, extracted from user's email address.
 
-      - name: interview_user
+      - name: interviewer_user
         description: Table relating interviews to their interviewers.
         columns:
           - name: interview_id
@@ -189,6 +189,8 @@ sources:
             description: Foreign key referencing the STAGE that the opportunity was changed to.
           - name: updater_id
             description: Foreign key referencing the USER who changed the opportunity stage.
+          - name: to_stage_index
+            description: The index of the stage in the pipeline at the time the stage change occurred. 
 
       - name: stage
         description: Table of steps in the recruiting workflow of your hiring pipeline.
@@ -423,7 +425,7 @@ sources:
           - name: field_index
             description: Numerical index of the field's position in the feedback form. 
           - name: value_index
-            description: Index of the value(s) provided for this field. This is relevant if the field is an array.
+            description: Index of the value(s) provided for this field. This is relevant if the field is an array. todo
           - name: code_language
             description: Programming language if the interview assessed coding. 
           - name: currency 
