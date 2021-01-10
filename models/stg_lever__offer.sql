@@ -26,8 +26,7 @@ final as (
         created_at,
         creator_id as creator_user_id,
         id as offer_id,
-        status,
-        candidate_id as opportunity_id -- todo surface this issue
+        status
         
     from fields
 )
