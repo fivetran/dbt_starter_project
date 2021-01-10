@@ -6,88 +6,22 @@ profile: 'integration_tests'
 
 vars:
   lever_source:
-    application: "{{ ref('application') }}"
-    archive_reason: "{{ ref('archive_reason') }}"
-    feedback_form: "{{ ref('feedback_form') }}"
-    feedback_form_field: "{{ ref('feedback_form_field') }}"
-    interview_feedback: "{{ ref('interview_feedback') }}"
-    interview: "{{ ref('interview') }}"
-    interviewer_user: "{{ ref('interviewer_user') }}"
-    offer: "{{ ref('offer') }}"
-    opportunity_source: "{{ ref('opportunity_source') }}"
-    opportunity_stage_history: "{{ ref('opportunity_stage_history') }}"
-    opportunity_tag: "{{ ref('opportunity_tag') }}"
-    opportunity: "{{ ref('opportunity') }}"
-    panel_application: "{{ ref('panel_application') }}"
-    panel_interview: "{{ ref('panel_interview') }}"
-    panel: "{{ ref('panel') }}"
-    posting_interview: "{{ ref('posting_interview') }}"
-    posting_tag: "{{ ref('posting_tag') }}"
-    posting: "{{ ref('posting') }}"
-    requisition_posting: "{{ ref('requisition_posting') }}"
-    requisition: "{{ ref('requisition') }}"
-    stage: "{{ ref('stage') }}"
-    user: "{{ ref('user') }}"
+      table: "{{ ref('table_data') }}"
+      table_2: "{{ ref('table_2_data') }}"
+      using_bool: True
+      using_bool_2: True
 
 seeds:
   lever_source_integration_tests:
     +column_types:
       _fivetran_synced: timestamp
-    application:
+    table:
       +column_types:
-        archived_at: timestamp
-        created_at: timestamp
-    feedback_form:
+        create_time: timestamp
+        start_time: timestamp
+    table_2:
       +column_types:
-        completed_at: timestamp
-        created_at: timestamp
-        deleted_at: timestamp
-    feedback_form_field:
-      +column_types:
-        field_index: "{{ 'int64' if target.name == 'bigquery' else 'bigint' }}"
-        value_index: "{{ 'int64' if target.name == 'bigquery' else 'bigint' }}"
-        value_date: timestamp
-        value_decimal: numeric
-    interview:
-      +column_types:
-        canceled_at: timestamp
-        created_at: timestamp
-        date: timestamp
-        duration: "{{ 'int64' if target.name == 'bigquery' else 'bigint' }}"
-    offer:
-      +column_types:
-        created_at: timestamp
-    opportunity:
-      +column_types:
-        archived_at: timestamp
-        created_at: timestamp 
-        data_protection_contact_expires_at: timestamp
-        data_protection_store_expires_at: timestamp
-        last_advanced_at: timestamp
-        last_interaction_at: timestamp
-        snoozed_until: timestamp
-        updated_at: timestamp 
-    opportunity_stage_history:
-      +column_types:
-        updated_at: timestamp
-    panel:
-      +column_types:
-        canceled_at: timestamp
-        created_at: timestamp 
-        end: timestamp
-        start: timestamp
-    posting:
-      +column_types:
-        created_at: timestamp
-        updated_at: timestamp
-    requisition:
-      +column_types:
-        created_at: timestamp
-    template_field:
-      +column_types:
-        field_index: "{{ 'int64' if target.name == 'bigquery' else 'bigint' }}"
-    user:
-      +column_types:
-        created_at: timestamp
-        deactivated_at: timestamp
-        
+        create_time: timestamp
+        start_time: timestamp
+        send_time: timestamp
+
