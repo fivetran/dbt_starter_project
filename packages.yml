@@ -5,3 +5,10 @@ packages:
 
   - git: https://github.com/fivetran/dbt_fivetran_utils.git
     warn-unpinned: false  
+
+  # - package: fivetran/salesforce
+  #   version: 0.3.0
+
+  # - package: fivetran/jira
+  #   version: 0.1.0
+  - local: ../dbt_lever # todo change this
