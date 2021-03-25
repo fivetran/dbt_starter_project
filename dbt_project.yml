@@ -4,8 +4,9 @@ config-version: 2
 require-dbt-version: [">=0.18.0", "<0.20.0"]
 
 models:
-  +schema: stg_connector_name #connector for transform package
-  +materialized: table # for building the package, switch to views later? 
+  connector:
+    +schema: stg_connector_name #connector for transform package
+    +materialized: table # for building the package, switch to views later? 
 
 vars:
   connector:
