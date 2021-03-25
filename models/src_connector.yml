@@ -16,5 +16,4 @@ sources:
 
     tables:
     # tables with table and column- level descriptions
-    # unique/not_null tests on primary keys
          

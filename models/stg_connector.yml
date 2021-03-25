@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_connector__table_name
+    description: This is the first stage table
+    columns:
+      - name: field_name
+        description: Field description
+      tests:
+        # unique/not_null tests on primary keys
