@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Your Question**
-*What is the question you would like to ask us about the package*
+<!--- What is the question you would like to ask us about the package --> 
 
 **Additional context**
-*Add any other context or screenshots about the feature request here.*
+<!--- Add any other context or screenshots about the feature request here. -->
