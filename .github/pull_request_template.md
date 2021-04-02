@@ -1,12 +1,3 @@
----
-name: Pull Request
-about: Open a pull request to add to the dbt package
-title: PULL REQUEST - [your pull request title here]
-labels: ''
-assignees: ''
-
----
-
 **What change(s) does this PR introduce?** 
 <!--- Describe what changes your PR introduces to the package -->
 
