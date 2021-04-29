@@ -7,6 +7,14 @@ assignees: ''
 
 ---
 
+**Are you a current Fivetran customer?** 
+<!--- Please tell us your name, title and company -->
+
+**Please indicate the level of urgency** 
+<!--- Is this impacting your reporting of a critical dashboard? Are you just testing this for the first time? Provide us context so that we can prioritize accordingly. -->
+
+
+
 **Describe the bug**
 <!--- A clear and concise description of what the bug is. -->
 
@@ -20,7 +28,7 @@ assignees: ''
 <!--- A clear and concise description of what you expected to happen. -->
 
 **Project variables configuration**
-<!--- Copy and paste the contents of your `dbt_project.yml` file below. Be sure to XXX any sensitive information. -->
+<!--- Copy and paste the contents of your `dbt_project.yml` file below. -->
 ```yml
 copy dbt_project.yml here
 ```
