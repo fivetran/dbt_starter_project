@@ -10,15 +10,6 @@ assignees: ''
 **Are you a current Fivetran customer?** 
 <!--- Please tell us your name, title and company -->
 
-**Please indicate the level of urgency** 
-<!--- Is this impacting your reporting of a critical dashboard? Are you just testing this for the first time? Provide us context so that we can prioritize accordingly. -->
-
-**Are you interested in contributing to this package?** 
-<!--- Our packages are all open-source and we welcome contributions from the community! Are you interested in helping us fix this bug? -->
-- [ ] Yes, I can do this and open a PR for your review.
-- [ ] Possibly, but I'm not quite sure how to do this. I'd be happy to do a live coding session with someone to get this fixed. 
-- [ ] No, I'd prefer if someone else fixed this.  I don't have the time and/or don't know what the root cause of the problem is.
-
 
 **Describe the bug**
 <!--- A clear and concise description of what the bug is. -->
@@ -59,3 +50,13 @@ copy packages.yml here
 
 **Screenshots**
 <!--- If applicable, add screenshots to help explain your problem.  -->
+
+**Please indicate the level of urgency** 
+<!--- Is this impacting your reporting of a critical dashboard? Are you just testing this for the first time? Provide us context so that we can prioritize accordingly. -->
+
+**Are you interested in contributing to this package?** 
+<!--- Our packages are all open-source and we welcome contributions from the community! Are you interested in helping us fix this bug? -->
+- [ ] Yes, I can do this and open a PR for your review.
+- [ ] Possibly, but I'm not quite sure how to do this. I'd be happy to do a live coding session with someone to get this fixed. 
+- [ ] No, I'd prefer if someone else fixed this.  I don't have the time and/or don't know what the root cause of the problem is.
+
