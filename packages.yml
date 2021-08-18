@@ -1,14 +1,18 @@
 packages:
 
-  - package: fishtown-analytics/dbt_utils
-    version: [">=0.6.0","<0.7.0"] 
+  # - package: fishtown-analytics/dbt_utils
+  #   version: [">=0.6.0","<0.7.0"] 
 
-  - git: https://github.com/fivetran/dbt_fivetran_utils.git
-    warn-unpinned: false  
+  # - git: https://github.com/fivetran/dbt_stripe_source.git
+  #   revision: config_livemode
 
-  # - package: fivetran/salesforce
-  #   version: 0.3.0
-
+  # - local: ../dbt_fivetran_log
+  - local: ../dbt_pendo
+  # - git: https://github.com/fivetran/dbt_fivetran_log.git
+  #   warn-unpinned: false  
   # - package: fivetran/jira
-  #   version: 0.1.0
-  - local: ../dbt_lever # todo change this
+  #   version: [">=0.3.0","<0.4.0"] 
+  # - package: fivetran/github
+  #   version: 0.2.1\\
+  # - package: fivetran/fivetran_utils
+  #   version: 0.2.3

@@ -1,19 +1,52 @@
 name: 'jamie_dbt_dev'
 version: '0.1.0'
 config-version: 2
-require-dbt-version: [">=0.18.0", "<0.19.0"]
+require-dbt-version: ">=0.20.0"
+# profile: fivetran private
+profile: fivetran_testing
+# profile: databricks
+# profile: fivetran_testing
+# profile: integration_tests
 
-
-models: 
-  materialized: table # for building the package, switch to views later? 
+# models: 
+#   materialized: table # for building the package, switch to views later? 
+dispatch:
+  - macro_namespace: fivetran_utils
+    search_order: ['spark_utils', 'fivetran_utils']
+  - macro_namespace: dbt_utils
+    search_order: ['spark_utils', 'fivetran_utils', 'dbt_utils']
 
 vars:
-  salesforce_schema: how_to_dbt_tutorials
-  jira_schema: jira_3
-  lever_database: private-internal 
-  lever_schema: lever_opp
+  zendesk_source:
+    zendesk_database: 'digital-arbor-400'
+    using_ticket_form_history: false
 
-  jira:
-    issue_field_history_columns: ['test checkboxes', 'approvers', 'parent link']
+  # # fivetran_log_schema: fivetran_log_acct
+  # lever_using_posting_tag: false
+  pendo_source:
+    pendo_database: 'digital-arbor-400'
 
-profile: fivetran
+  pendo__account_history_pass_through_columns: 
+    - name: "salesforce_status_c"
+    - name: "agent_name"
+      alias: "account_name"
+  pendo__visitor_history_pass_through_columns:
+    - name: "agent_name"
+      alias: "visitor_name"
+
+  mixpanel:
+    mixpanel_schema: mixpanel_customer
+
+clean-targets:
+    - target
+    - dbt_modules
+
+# dispatch:
+#   - macro_namespace: dbt
+#     search_order: [fivetran_utils, dbt]
+
+# models:
+#   hubspot:
+#     +schema: _hubspot
+#     hubspot_source:
+#       +schema: _stg_hubspot
