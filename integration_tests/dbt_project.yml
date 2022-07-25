@@ -1,16 +1,13 @@
 name: 'PACKAGE_NAME_integration_tests'
-version: '0.1.0'
+version: '0.2.0'
 config-version: 2
 profile: 'integration_tests'
-
-
 vars:
   PACKAGE_NAME:
-      table: "{{ ref('table_data') }}"
-      table_2: "{{ ref('table_2_data') }}"
-      using_bool: True
-      using_bool_2: True
-
+    table: "{{ ref('table_data') }}"
+    table_2: "{{ ref('table_2_data') }}"
+    using_bool: true
+    using_bool_2: true
 seeds:
   PACKAGE_NAME_integration_tests:
     +column_types:
@@ -24,4 +21,3 @@ seeds:
         create_time: timestamp
         start_time: timestamp
         send_time: timestamp
-
