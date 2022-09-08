@@ -1,5 +1,4 @@
-...
-    steps:
+steps:
       - uses: actions/checkout@v2
 
       - name: Verify Changed files
