@@ -12,6 +12,8 @@ jobs:
           files: |
             docs/*.json
             docs/*.html
+
+      - name: Checked files
         run: |
           echo "checking files"
 
