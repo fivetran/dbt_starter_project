@@ -12,6 +12,8 @@ jobs:
           files: |
             docs/*.json
             docs/*.html
+        run: |
+          echo "checking files"
 
       - name: Run step only when files have not changed.
         if: steps.verify-changed-files.outputs.files_changed == 'false'
