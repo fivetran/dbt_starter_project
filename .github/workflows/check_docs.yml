@@ -1,4 +1,8 @@
-steps:
+on: [push]
+jobs:
+  verify-changed-files:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
 
       - name: Verify Changed files
