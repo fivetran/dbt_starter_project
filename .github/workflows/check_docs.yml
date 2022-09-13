@@ -1,10 +1,6 @@
 on: [push]
   pull_request:
 
-permissions:
-  contents: read
-  pull-requests: read
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,7 +24,7 @@ jobs:
 
   # verify-changed-files:
   #   runs-on: ubuntu-latest
-  #   steps:
+    # steps:
   #     - uses: actions/checkout@v2
 
   #     - name: Verify Changed files
