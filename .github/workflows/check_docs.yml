@@ -1,6 +1,5 @@
 name: 'check docs'
 on: [push]
-  pull_request:
 
 jobs:
   changed-files:
