@@ -23,7 +23,7 @@ jobs:
           files: docs/**
 
       - name: Run step if any files in the docs folder changed
-        if: steps.changed-files.outputs.any_changed == 'true'
+        if: steps.changed-files.outputs.any_changed == 'false'
         run: |
           echo "One or more files in the docs folder haven't changed."
           echo "List all the files that haven't changed: ${{ steps.changed-files.outputs.all_changed_files }}"
