@@ -22,11 +22,13 @@ jobs:
         with:
           files: docs/**
 
-      - name: Check to see if docs folder changed
+      - name: Check to see if docs folder hasn't changed
         if: steps.changed-files.outputs.any_changed == 'false'
         run: |
           echo "Docs have not been regenerated."
-          exit 1 
+          exit 1
+      
+      - name: Check if docs folder has changed
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
           echo "Docs have been regenerated!"
