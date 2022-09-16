@@ -24,9 +24,10 @@ jobs:
 
       - name: Run step if any files in the docs folder changed
         if: steps.changed-files.outputs.any_changed == 'true'
-        # run: |
-        #   echo "One or more files in the docs folder haven't changed."
-        #   echo "List all the files that haven't changed: ${{ steps.changed-files.outputs.all_changed_files }}"
+        run: |
+          echo "One or more files in the docs folder haven't changed."
+          echo "List all the files that haven't changed: ${{ steps.changed-files.outputs.all_changed_files }}"
+          exit 1 
 
   # verify-changed-files:
   #   runs-on: ubuntu-latest
