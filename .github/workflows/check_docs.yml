@@ -23,9 +23,9 @@ jobs:
           files: docs/**
 
       - name: Run step if any files in the docs folder changed
-        if: steps.changed-files.outputs.any_changed == 'false'
+        if: steps.changed-files.outputs.any_changed == 'true'
         run: |
-          echo "One or more files in the docs folder has not changed."
+          echo "One or more files in the docs folder have changed."
           echo "List all the files that haven't changed: ${{ steps.changed-files.outputs.all_changed_files }}"
 
   # verify-changed-files:
