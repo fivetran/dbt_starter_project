@@ -1,2 +1,2 @@
 select
-  cast(1 as {{ dbt_utils.type_numeric() }} ) as test
+  cast(1 as {{ dbt.type_numeric() }} ) as test
