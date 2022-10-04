@@ -1,0 +1,35 @@
+name: 'check docs'
+on:
+  push: # runs on pushes
+    branches:
+      - main #  Use branches filter so your workflow to only runs when a push to a branch that matches the branches filter occurs, instead of when any push occurs.
+  pull_request:
+    branches:
+      - main # configure a workflow to run only for pull requests that target specific branches.
+
+jobs:
+  changed-files: # define a job 
+    runs-on: ubuntu-latest # Configures the job to run on the latest version of an Ubuntu Linux runner. 
+    name: test changed-files #  The name of the workflow as it will appear in the "Actions" tab of the GitHub repository.
+    steps:
+      - uses: actions/checkout@v3 # specifies that this step will run v3 of the actions/checkout action
+        with:
+          fetch-depth: 0 # fetch all history for all branches and tags
+
+      - name: Get changed files # name of step
+        id: changed-files # creates an ID for this step, so you can reference it in other context (see next step)
+        uses: tj-actions/changed-files@v29.0.4 # specify version it's using
+        with:
+          files: docs/** # filters to only look at the docs folder
+
+      - name: Check to see if docs folder hasn't changed
+        if: steps.changed-files.outputs.any_changed == 'false'
+        run: |
+          echo "Docs have not been regenerated."
+          exit 1
+      
+      - name: Check if docs folder has changed
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          echo "Docs have been regenerated!"
+          exit 0 
