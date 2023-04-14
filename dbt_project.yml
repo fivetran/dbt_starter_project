@@ -1,3 +1,4 @@
+dbt run-operation fivetran_utils.drop_schemas --target "$db"
 name: 'connector_name'
 version: '0.2.0'
 config-version: 2
@@ -11,3 +12,6 @@ vars:
     table_name: "{{ ref('stg_connector__table_name') }}"
   connector_source:
     table_name: "{{ source('connector', 'table_name') }}"
+dbt run-operation fivetran_utils.drop_schemas --target "$db"
+dbt run-operation fivetran_utils.drop_schemas --target "$db"
+dbt run-operation fivetran_utils.drop_schemas --target "$db"
