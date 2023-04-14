@@ -12,3 +12,4 @@ vars:
   connector_source:
     table_name: "{{ source('connector', 'table_name') }}"
 dbt run-operation fivetran_utils.drop_schemas --target "$db"
+dbt run-operation fivetran_utils.drop_schemas --target "$db"
