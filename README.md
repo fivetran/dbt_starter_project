@@ -1,3 +1,8 @@
+# dbt_starter_projectv0.UPDATE.UPDATE
+
+ ## Under the Hood:
+
+- Incorporated the new `fivetran_utils.drop_schemas` macro into the end of each Buildkite integration test job.
 > Fivetran's starter project which acts as the foundation to building dbt packages
 > Here's a template of the README for both transformation + source packages
 
