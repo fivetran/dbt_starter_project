@@ -1,11 +1,11 @@
-# for source packages/pulling from the raw connector data
+# for source packages/pulling from the raw connector_THIS_WORKED data
 
 version: 2
 
 sources:
-  - name: connector_name 
-    database: "{{ var ('connector_database', target.database) }}"
-    schema: "{{ var ('connector_schema', 'connector_name') }}"
+  - name: connector_THIS_WORKED_name 
+    database: "{{ var ('connector_THIS_WORKED_database', target.database) }}"
+    schema: "{{ var ('connector_THIS_WORKED_schema', 'connector_THIS_WORKED_name') }}"
 
     loader: fivetran
     loaded_at_field: _fivetran_synced

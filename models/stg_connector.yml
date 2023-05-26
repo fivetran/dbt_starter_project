@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_connector__table_name
+  - name: stg_connector_THIS_WORKED__table_name
     description: This is the first stage table
     columns:
       - name: field_name

@@ -1,18 +1,19 @@
-name: 'connector_name'
-version: '0.1.0'
+\# we added a comment \#
+name: 'connector_THIS_WORKED_name'
+version: '0.2.0'
 config-version: 2
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 models:
-  connector:
-    +schema: stg_connector_name #connector for transform package
+  connector_THIS_WORKED:
+    +schema: stg_connector_THIS_WORKED_name #connector_THIS_WORKED for transform package
     +materialized: table # for building the package, switch to views later? 
 
 vars:
-  connector:
-    table_name: "{{ ref('stg_connector__table_name') }}" # all references to staging models should be vars
+  connector_THIS_WORKED:
+    table_name: "{{ ref('stg_connector_THIS_WORKED__table_name') }}" # all references to staging models should be vars
 
-  connector_source:
-    table_name: "{{ source('connector', 'table_name') }}" # all sources should be vars
+  connector_THIS_WORKED_source:
+    table_name: "{{ source('connector_THIS_WORKED', 'table_name') }}" # all sources should be vars
 
 
