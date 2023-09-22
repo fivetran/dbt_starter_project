@@ -31,8 +31,8 @@ jobs:
             patch="${version#*.}"
         }
 
-        OLD_PROJECT_VERSION=$(git show HEAD~1:../../dbt_project.yml | yq eval '.version' -)
-        NEW_PROJECT_VERSION=$(yq eval '.version' ../../dbt_project.yml)
+        OLD_PROJECT_VERSION=$(git show master:dbt_project.yml | yq eval '.version' -)
+        NEW_PROJECT_VERSION=$(yq eval '.version' dbt_project.yml)
 
         # Parse old and new project versions
         parse_version $OLD_PROJECT_VERSION OLD_MAJOR_P OLD_MINOR_P OLD_PATCH_P
@@ -43,8 +43,8 @@ jobs:
         for ((i=0; i<$package_count; i++)); do
           package_name=$(yq eval ".packages[$i].package" ../../packages.yml)
           
-          OLD_VERSION_RANGE=$(git show HEAD~1:../../packages.yml | yq eval ".packages[$i].version[]" -)
-          NEW_VERSION_RANGE=$(yq eval ".packages[$i].version[]" ../../packages.yml)
+          OLD_VERSION_RANGE=$(git show master:packages.yml | yq eval ".packages[$i].version[]" -)
+          NEW_VERSION_RANGE=$(yq eval ".packages[$i].version[]" packages.yml)
 
           # Check version bumps for each boundary in the version range
           for old_bound in $OLD_VERSION_RANGE; do
