@@ -6,7 +6,7 @@ We recommend reviewing this [DBT Discourse article](https://discourse.getdbt.com
 
 1. Check to see if an issue already exists for the feature you want to create or bug you’ve encountered. If none exist, please open one [HERE](https://github.com/fivetran/dbt_netsuite/issues). 
 
-2. If it’s a bug fix, we’ll ask you to provide the relevant error log or model output. 
+2. If it’s a bug fix, please provide the relevant error log or model output. 
 
 3. Fork the dbt package.
 
